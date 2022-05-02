@@ -7,14 +7,11 @@
 $couleur_primaire : #9356DC;
 $couleur_secondaire : #FF79DA;
 $couleur_tertiaire : #99E2D0;
-$gris_primaire: rgba(231, 233, 233, 0.801);
-$gris_secondaire: rgb(66, 66, 66);
-$gris_tertiaire : rgb(66, 66, 66);
+$gris_primaire: rgb(221, 221, 221);
+$gris_secondaire: rgb(54, 54, 54);
+$gris_tertiaire : rgb(241, 241, 241);
 
-img,h1,h2,h3 {
-    font-family: "Shrikhand", sans-serif;
-}
-p,a {
+p,a,h1,h2,h3 {
     font-family: 'Roboto', sans-serif;
 }
 
@@ -36,7 +33,10 @@ input::placeholder {
     &__logo {
         width: 100%;
         text-align: center;
-        box-shadow: 0 4px 2px -2px gray;
+        box-shadow: 0 5px 4px -2px $gris_secondaire;
+        padding-top: 2%;
+        padding-bottom: 2%;
+        
     }
         &__logo img {
             width: 45%;
@@ -60,3 +60,35 @@ input::placeholder {
 }
 
 /* Fin Header */
+
+/* Exploration restaurants */
+.exploration {
+    width: 100%;
+    text-align: center;
+    background-color: $gris_tertiaire;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    &__titre {
+        margin-top: 0%;
+        width: 99%;
+    }
+    &__paragraph {
+        width: 95%;
+        font-size: large;
+        color: $gris_secondaire;
+        margin-bottom: 8%;
+    }
+    &__button {
+        border: none;
+        border-radius: 30px 30px;
+        font-size: large;
+        color: white;
+        background: linear-gradient($couleur_secondaire,$couleur_primaire);
+        box-shadow: 0 5px 20px rgb(172, 172, 172);
+        font-family: 'Roboto',sans-serif;
+        padding: 13px 25px;
+        margin-bottom: 8%;     
+    }
+
+}
+/* Exploration restaurants fin */
