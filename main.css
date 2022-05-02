@@ -1,0 +1,72 @@
+@charset "UTF-8";
+/* Général */
+* {
+  margin-left: 0%;
+  margin-right: 0%;
+}
+
+img, h1, h2, h3 {
+  font-family: "Shrikhand", sans-serif;
+}
+
+p, a {
+  font-family: 'Roboto', sans-serif;
+}
+
+input::-webkit-input-placeholder {
+  color: #424242;
+}
+
+input:-ms-input-placeholder {
+  color: #424242;
+}
+
+input::-ms-input-placeholder {
+  color: #424242;
+}
+
+input::placeholder {
+  color: #424242;
+}
+
+.fa-location-dot {
+  margin-right: 2%;
+  color: #424242;
+}
+
+/* Fin Général */
+/* Header */
+.header {
+  width: 100%;
+}
+
+.header__logo {
+  width: 100%;
+  text-align: center;
+  -webkit-box-shadow: 0 4px 2px -2px gray;
+          box-shadow: 0 4px 2px -2px gray;
+}
+
+.header__logo img {
+  width: 45%;
+}
+
+.header__search {
+  width: 100%;
+  background-color: rgba(231, 233, 233, 0.801);
+  text-align: center;
+  padding-top: 4%;
+  padding-bottom: 4%;
+  padding-left: 8%;
+}
+
+.header__searchzone {
+  outline: none;
+  border: none;
+  font-size: medium;
+  font-weight: bold;
+  background-color: rgba(231, 233, 233, 0.801);
+}
+
+/* Fin Header */
+/*# sourceMappingURL=main.css.map */
