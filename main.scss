@@ -7,11 +7,11 @@
 $couleur_primaire : #9356DC;
 $couleur_secondaire : #FF79DA;
 $couleur_tertiaire : #99E2D0;
-$gris_primaire: rgb(221, 221, 221);
+$gris_primaire: rgb(231, 231, 231);
 $gris_secondaire: #848484;
 $gris_tertiaire : #f6f6f6;
 $gris_texte : #353535;
-$gris_ombre:#cfcfcf;
+$gris_ombre:#c7c7c7;
 
 p,a,h1,h2,h3 {
     font-family: 'Roboto', sans-serif;
@@ -35,9 +35,10 @@ input::placeholder {
     &__logo {
         width: 100%;
         text-align: center;
-        box-shadow: 0px 5px 20px -6px $gris_texte;
+        box-shadow: 0px 15px 15px 1px $gris_ombre;
         padding-top: 2%;
         padding-bottom: 2%;
+        margin-bottom: 0.5%;
         
     }
         &__logo img {
@@ -86,10 +87,13 @@ input::placeholder {
         font-size: large;
         color: white;
         background: linear-gradient($couleur_secondaire,$couleur_primaire);
-        box-shadow: 0 5px 20px rgb(172, 172, 172);
+        box-shadow: 0 5px 10px 1px rgb(172, 172, 172);
         font-family: 'Roboto',sans-serif;
         padding: 13px 25px;
-        margin-bottom: 8%;     
+        margin-bottom: 8%;
+        &:hover {
+            box-shadow: 0px 5px 5px 1px rgb(172, 172, 172);
+        }     
     }
 }
 /* Exploration restaurants fin */
@@ -97,6 +101,8 @@ input::placeholder {
 /* Fonctionnement */
 .fonctionnement {
     margin-left: 5%;
+    margin-top: 10%;
+    margin-bottom: 20%;
     &__choix {
         display: flex;
         align-items: center;
@@ -106,6 +112,14 @@ input::placeholder {
         border-radius: 20px 20px;
         background-color: $gris_tertiaire;
         margin-bottom: 5%;
+        box-shadow: 0px 4px 10px 1px $gris_ombre;
+    }
+    &__choix:hover {
+        background-color: lighten($couleur_primaire, $amount: 35);
+        box-shadow: 0px 4px 4px 1px $gris_ombre;
+    }
+    &__choix:hover i {
+        color: $couleur_primaire;
     }
 }
 .choix__premier {
