@@ -211,6 +211,13 @@ input {
             margin-left: 2%;
             margin-top: 1%; 
         }
+        &__link {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
 }
 
 .coeur__position {
@@ -219,8 +226,9 @@ input {
 
 .fa-heart {
     position: absolute;
+    font-size: x-large;
     top: 10%;
-    left: 90%;
+    left: 87%;
     z-index: 1;
     overflow: hidden;
     
