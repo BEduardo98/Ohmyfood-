@@ -5,6 +5,10 @@
   margin-right: 0%;
 }
 
+body {
+  margin-bottom: 0%;
+}
+
 p, a, h1, h2, h3 {
   font-family: 'Roboto', sans-serif;
 }
@@ -32,12 +36,11 @@ input::placeholder {
 
 /* Fin Général */
 /* Header */
-.header {
-  width: 100%;
+input {
+  width: 40%;
 }
 
 .header__logo {
-  width: 100%;
   text-align: center;
   -webkit-box-shadow: 0px 15px 15px 1px #c7c7c7;
           box-shadow: 0px 15px 15px 1px #c7c7c7;
@@ -47,16 +50,14 @@ input::placeholder {
 }
 
 .header__logo img {
-  width: 45%;
+  width: 50%;
 }
 
 .header__search {
-  width: 100%;
   background-color: #e7e7e7;
   text-align: center;
   padding-top: 4%;
   padding-bottom: 4%;
-  padding-left: 8%;
 }
 
 .header__searchzone {
@@ -179,7 +180,7 @@ input::placeholder {
 .restaurants {
   background-color: #f6f6f6;
   width: 100%;
-  height: 1500px;
+  height: 1100px;
   padding-top: 5%;
 }
 
@@ -202,7 +203,22 @@ input::placeholder {
   height: 100%;
 }
 
+.texte__nouveau {
+  position: absolute;
+  top: 5%;
+  left: 75%;
+  border: 5px solid #99E2D0;
+  border-radius: 2px;
+  background-color: #99E2D0;
+  font-family: "Roboto", sans-serif;
+  font-size: small;
+  font-weight: 500;
+  color: #2c9c81;
+  padding: 0.2% 2%;
+}
+
 .restaurant {
+  position: relative;
   border: 1px solid white;
   border-radius: 20px 20px;
   background-color: white;
@@ -215,7 +231,7 @@ input::placeholder {
   border-radius: 20px 20px 0px 0px;
   -o-object-fit: cover;
      object-fit: cover;
-  height: 75%;
+  height: 70%;
   width: 100%;
 }
 
@@ -228,7 +244,14 @@ input::placeholder {
 .restaurant__texte {
   margin-left: 2%;
   margin-top: 1%;
-  margin-bottom: 0%;
+}
+
+.restaurant__link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
 
 .coeur__position {
@@ -237,13 +260,13 @@ input::placeholder {
 
 .fa-heart {
   position: absolute;
+  font-size: x-large;
   top: 10%;
-  left: 90%;
+  left: 87%;
   z-index: 1;
   overflow: hidden;
-  /* Solution mais besoin d'explication de ce qui se passe, car je ne comprends rien, pourquoi en enlevant le webkit sur background clip ca ne fonctionne plus ?
-    Il se passe quoi exactement lorsqu'on utilise cette solution ?
-    J'ai réussi à faire une transition propre mais je reste avec un bloc qui se coloris sans que ca prenne la forme du coeur */
+  /* Comment faire pour que le bloc epouse le coeur ? Faut-il créer un autre coeur en dessous ?
+    Il se passe quoi exactement lorsqu'on utilise cette solution ? */
   /* &:hover {
         -webkit-background-clip: text;
         font-weight: 900;
@@ -251,64 +274,96 @@ input::placeholder {
         -webkit-text-fill-color: transparent;
     }
     */
-  /*&:hover {
-        animation: coeur_rempli 1.5s ease-in-out forwards;
-        cursor: pointer;
-    }
-    @keyframes coeur_rempli {
-        0%{
-            font-weight: 700;
-            color: lighten($couleur_primaire, $amount: 25);
-        }
-        25%{
-            font-weight: 700;
-            color: lighten($couleur_primaire, $amount: 20);
-        }
-        50%{
-            font-weight: 700;
-            color: lighten($couleur_primaire, $amount: 10);
-        }
-        75%,100% {
-            font-weight: 700;
-            color: lighten($couleur_primaire, $amount: 5);
-        }
-        
-    }
-    */
 }
 
-.fa-heart::before, .fa-heart::after {
-  content: "";
-  opacity: 1;
+.fa-heart:hover::after {
+  content: '';
   z-index: -1;
-  background-color: red;
-  border-radius: 50%;
-  height: 30px;
   position: absolute;
-  width: 30px;
+  bottom: 18%;
+  left: 0%;
+  height: 100%;
+  width: 100%;
+  border-radius: 20px 20px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
+  background: linear-gradient(#9356DC, #FF79DA);
+  -webkit-animation: spin 6s ease-in-out infinite;
+          animation: spin 6s ease-in-out infinite;
 }
 
-/*.fa-heart::after{
-    content: '';
-    z-index: -1;
-    position: absolute;
-    bottom: 18%;
-    left: 0%;
-    height: 100%;
-    width: 100%;
-    border-radius: 20px 20px;
-    background: linear-gradient($couleur_primaire, $couleur_secondaire);
-    animation: spin 6s ease-in-out infinite;
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: translateY(100%) rotate(0deg);
+            transform: translateY(100%) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translateY(0%) rotate(360deg);
+            transform: translateY(0%) rotate(360deg);
+  }
 }
 
 @keyframes spin {
-    0%{
-        transform: translateY(100%) rotate(0deg);
-    }
-    100%{
-        transform: translateY(0%) rotate(360deg);
-    }
+  0% {
+    -webkit-transform: translateY(100%) rotate(0deg);
+            transform: translateY(100%) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translateY(0%) rotate(360deg);
+            transform: translateY(0%) rotate(360deg);
+  }
 }
-*/
+
 /* Fin Restaurants */
+/* Footer */
+.footer {
+  height: 200px;
+  background-color: #353535;
+  padding-top: 8%;
+  padding-left: 5%;
+}
+
+.footer__img {
+  width: 30%;
+  margin-bottom: 5%;
+  -webkit-filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(129deg) brightness(104%) contrast(107%);
+          filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(129deg) brightness(104%) contrast(107%);
+}
+
+.footer__pages {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.footer__ensemble {
+  margin-bottom: 2%;
+}
+
+.footer a {
+  text-decoration: none;
+  color: white;
+  padding-bottom: 2%;
+}
+
+.footer a:hover {
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.fa-utensils {
+  color: white;
+  margin-right: 3%;
+}
+
+.fa-handshake-angle {
+  color: white;
+  margin-right: 2%;
+}
+
+/* Fin Footer */
 /*# sourceMappingURL=main.css.map */
