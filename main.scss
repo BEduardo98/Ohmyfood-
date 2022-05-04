@@ -4,6 +4,10 @@
     margin-right: 0%;
 }
 
+body {
+    margin-bottom: 0%;
+}
+
 $couleur_primaire : #9356DC;
 $couleur_secondaire : #FF79DA;
 $couleur_tertiaire : #99E2D0;
@@ -29,28 +33,27 @@ input::placeholder {
 /* Fin Général */
 
 /* Header */
-
+input {
+    width: 40%;
+}
 .header {
-    width: 100%;
     &__logo {
-        width: 100%;
         text-align: center;
         box-shadow: 0px 15px 15px 1px $gris_ombre;
         padding-top: 2%;
         padding-bottom: 2%;
-        margin-bottom: 0.5%;
-        
+        margin-bottom: 0.5%;   
     }
-        &__logo img {
-            width: 45%;
-        }
+
+    &__logo img {
+        width: 50%;
+    }
+
     &__search {
-        width:100%;
         background-color: $gris_primaire;
         text-align: center;
         padding-top: 4% ;
         padding-bottom: 4%;
-        padding-left: 8%;
     }
 
     &__searchzone{
@@ -157,7 +160,7 @@ input::placeholder {
 .restaurants {
     background-color: $gris_tertiaire;
     width: 100%;
-    height: 1500px;
+    height: 1100px;
     padding-top: 5%;
     &__principal {
         margin-left: 5%;
@@ -171,7 +174,22 @@ input::placeholder {
     }
 }
 
+.texte__nouveau {
+    position: absolute;
+    top: 5%;
+    left: 75%;
+    border: 5px solid $couleur_tertiaire;
+    border-radius: 2px;
+    background-color: $couleur_tertiaire;
+    font-family: "Roboto", sans-serif;
+    font-size: small;
+    font-weight: 500;
+    color: darken($couleur_tertiaire, $amount: 35);
+    padding: 0.2% 2%;
+}
+
 .restaurant {
+    position: relative;
     border: 1px solid white;
     border-radius: 20px 20px;
     background-color: white;
@@ -181,7 +199,7 @@ input::placeholder {
         &__image {
             border-radius: 20px 20px 0px 0px;
             object-fit: cover;
-            height: 75%;
+            height: 70%;
             width: 100%;
         }
         &__titre {
@@ -191,8 +209,7 @@ input::placeholder {
         }
         &__texte {
             margin-left: 2%;
-            margin-top: 1%;
-            margin-bottom: 0%;  
+            margin-top: 1%; 
         }
 }
 
@@ -207,9 +224,8 @@ input::placeholder {
     z-index: 1;
     overflow: hidden;
     
-    /* Solution mais besoin d'explication de ce qui se passe, car je ne comprends rien, pourquoi en enlevant le webkit sur background clip ca ne fonctionne plus ?
-    Il se passe quoi exactement lorsqu'on utilise cette solution ?
-    J'ai réussi à faire une transition propre mais je reste avec un bloc qui se coloris sans que ca prenne la forme du coeur */
+    /* Comment faire pour que le bloc epouse le coeur ? Faut-il créer un autre coeur en dessous ?
+    Il se passe quoi exactement lorsqu'on utilise cette solution ? */
 
      /* &:hover {
         -webkit-background-clip: text;
@@ -217,48 +233,9 @@ input::placeholder {
         background-image: linear-gradient($couleur_primaire, $couleur_secondaire);
         -webkit-text-fill-color: transparent;
     }
-    */
-    
-    /*&:hover {
-        animation: coeur_rempli 1.5s ease-in-out forwards;
-        cursor: pointer;
-    }
-    @keyframes coeur_rempli {
-        0%{
-            font-weight: 700;
-            color: lighten($couleur_primaire, $amount: 25);
-        }
-        25%{
-            font-weight: 700;
-            color: lighten($couleur_primaire, $amount: 20);
-        }
-        50%{
-            font-weight: 700;
-            color: lighten($couleur_primaire, $amount: 10);
-        }
-        75%,100% {
-            font-weight: 700;
-            color: lighten($couleur_primaire, $amount: 5);
-        }
-        
-    }
-    */
-
-  
+    */  
 }
-
-.fa-heart::before,.fa-heart::after{
-    content: "";
-    opacity: 1;
-    z-index: -1;
-    background-color: red;
-    border-radius: 50%;
-    height: 30px;
-    position: absolute;
-    width: 30px;
-}
-
-/*.fa-heart::after{
+.fa-heart:hover::after{
     content: '';
     z-index: -1;
     position: absolute;
@@ -279,7 +256,48 @@ input::placeholder {
         transform: translateY(0%) rotate(360deg);
     }
 }
-*/
-
-
 /* Fin Restaurants */
+
+/* Footer */
+
+.footer {
+    height: 200px;
+    background-color: #353535;
+    padding-top: 8%;
+    padding-left: 5%;
+    &__img {
+        width: 30%;
+        margin-bottom: 5%;
+        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(129deg) brightness(104%) contrast(107%)
+        
+    }
+    &__pages {
+        display: flex;
+        flex-direction: column;
+    }
+    &__ensemble {
+        margin-bottom:2%;
+    }
+}
+
+.footer a {
+    text-decoration: none;
+    color: white;
+    padding-bottom: 2%;
+    &:hover {
+        font-weight: bold;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+
+.fa-utensils {
+    color: white;
+    margin-right: 3%;
+}
+
+.fa-handshake-angle {
+    color: white;
+    margin-right: 2%;
+}
+/* Fin Footer */
