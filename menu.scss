@@ -1,0 +1,220 @@
+/* Général */
+* {
+    margin-left: 0%;
+    margin-right: 0%;
+}
+
+body {
+    margin-bottom: 0%;
+}
+
+$couleur_primaire : #9356DC;
+$couleur_secondaire : #FF79DA;
+$couleur_tertiaire : #99E2D0;
+$gris_primaire: rgb(231, 231, 231);
+$gris_secondaire: #848484;
+$gris_tertiaire : #f6f6f6;
+$gris_texte : #353535;
+$gris_ombre:#c7c7c7;
+
+p,a,h1,h2,h3 {
+    font-family: 'Roboto', sans-serif;
+}
+
+input::placeholder {
+    color: $gris_texte;
+}
+
+.fa-location-dot {
+    margin-right: 2% ;
+    color: $gris_texte;
+}
+
+/* Fin Général */
+
+/* Header */
+.header {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    &__logo {
+        text-align: center;
+        padding-top: 2%;
+        padding-bottom: 2%;
+        margin-bottom: 0.5%;   
+    }
+
+    &__logo img {
+        width: 50%;
+    }
+}
+
+.retour {
+    position: relative;
+    margin-left: 5%;
+    font-size: larger;
+    &__link {
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        bottom: 0%;
+        width: 100%;
+    }
+}
+
+/* Fin Header */
+
+/* Restaurant */
+.restaurant {
+    padding-top: 5%;
+    background-color: $gris_tertiaire;
+    border-radius: 40px 40px 0px 0px;
+    position: relative;
+    &__nom{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-left: 5%;
+        margin-right: 10%;
+    }
+    &__titre {
+        font-family: 'Shrikhand', sans-serif;
+        font-weight: lighter;
+        text-align: left;
+    }
+}
+.fa-heart {
+    position: absolute;
+    font-size: x-large;
+    top: 4.5%;
+    left: 84%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.fa-heart:hover::after{
+    content: '';
+    z-index: -1;
+    position: absolute;
+    bottom: 18%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    border-radius: 20px 20px;
+    background: linear-gradient($couleur_primaire, $couleur_secondaire);
+    animation: spin 6s ease-in-out infinite;
+}
+
+@keyframes spin {
+    0%{
+        transform: translateY(100%) rotate(0deg);
+    }
+    100%{
+        transform: translateY(0%) rotate(360deg);
+    }
+}
+
+.menu {
+    margin-left: 5%;
+    &__titre {
+        font-size: medium;
+        font-weight: 400;
+        border-bottom: 3px solid $couleur_tertiaire;
+        width: 10%;
+        padding-bottom: 1%;
+    }
+    &__choix {
+        border: 1px solid white;
+        border-radius: 15px 15px;
+        box-shadow: 0px 5px 9px -1px $gris_ombre;
+        background-color: white;
+        width: 95%;
+        margin-bottom: 4%;
+        padding-top: 2%;
+    }
+    &__position {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-right: 5%;
+        margin-left: 2%;
+        height:30px;
+        margin-bottom: 2%;
+    }
+    &__restaurant {
+        margin-top: 1%;
+        margin-left: 2%;
+        margin-bottom: 0%;
+    }
+
+    &__texte {
+        margin: 0%;
+    }
+    &__prix {
+        font-weight: bold;
+        text-align: right;
+    }
+}
+
+/* Fin Restaurant */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Footer */
+
+.footer {
+    height: 200px;
+    background-color: #353535;
+    padding-top: 8%;
+    padding-left: 5%;
+    &__img {
+        width: 30%;
+        margin-bottom: 5%;
+        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(129deg) brightness(104%) contrast(107%)
+        
+    }
+    &__pages {
+        display: flex;
+        flex-direction: column;
+    }
+    &__ensemble {
+        margin-bottom:2%;
+    }
+}
+
+.footer a {
+    text-decoration: none;
+    color: white;
+    padding-bottom: 2%;
+    &:hover {
+        font-weight: bold;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+
+.fa-utensils {
+    color: white;
+    margin-right: 3%;
+}
+
+.fa-handshake-angle {
+    color: white;
+    margin-right: 2%;
+}
+/* Fin Footer */
