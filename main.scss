@@ -225,45 +225,48 @@ input {
 }
 
 .fa-heart {
+    display: inline-block;
     position: absolute;
-    font-size: x-large;
-    top: 10%;
+    top:0%;
     left: 87%;
-    z-index: 1;
-    overflow: hidden;
-    
-    /* Comment faire pour que le bloc epouse le coeur ? Faut-il créer un autre coeur en dessous ?
-    Il se passe quoi exactement lorsqu'on utilise cette solution ? */
-
-     /* &:hover {
-        -webkit-background-clip: text;
-        font-weight: 900;
-        background-image: linear-gradient($couleur_primaire, $couleur_secondaire);
-        -webkit-text-fill-color: transparent;
-    }
-    */  
+    font-size: x-large;
 }
 .fa-heart:hover::after{
-    content: '';
-    z-index: -1;
+    font-family: FontAwesome;
+    content: "\f004";
     position: absolute;
-    bottom: 18%;
-    left: 0%;
-    height: 100%;
-    width: 100%;
-    border-radius: 20px 20px;
-    background: linear-gradient($couleur_primaire, $couleur_secondaire);
-    animation: spin 6s ease-in-out infinite;
+    left: 0;
+    top: -0.5px;
+    width: 0%;
+    font-size: x-large;
+    overflow: hidden;
+    background: linear-gradient(#FF79DA, #9356DC);
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent;
+    animation: fill 1s ease-in-out forwards;
 }
 
-@keyframes spin {
-    0%{
-        transform: translateY(100%) rotate(0deg);
+@keyframes fill {
+    0% {
+        width: 0%;
     }
-    100%{
-        transform: translateY(0%) rotate(360deg);
+    10%{
+        width: 10%;
     }
+    25%{
+        width: 25%;
+    }
+    50% {
+        width: 50%;
+    }
+    75%{
+        width:75%;
+    }
+    100% {
+        width: 100%;
+    }   
 }
+
 /* Fin Restaurants */
 
 /* Footer */
