@@ -40,8 +40,7 @@ input::placeholder {
     &__logo {
         text-align: center;
         padding-top: 2%;
-        padding-bottom: 2%;
-        margin-bottom: 0.5%;   
+        padding-bottom: 2%;  
     }
 
     &__logo img {
@@ -61,8 +60,27 @@ input::placeholder {
         width: 100%;
     }
 }
-
 /* Fin Header */
+
+/* Image de fond */
+.img__header {
+    display:block;
+    height: 190px;
+    width: 100%;
+    @media screen and (max-width:350px) {
+        height: 160px;
+    }
+}
+
+.image__modification {
+    object-fit: contain;
+    object-position: 0px -20px;
+    height: 150%;
+    width: 100%;
+}
+
+/* Fin image de fond */
+
 
 /* Restaurant */
 .restaurant {
@@ -71,9 +89,6 @@ input::placeholder {
     border-radius: 40px 40px 0px 0px;
     position: relative;
     &__nom{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
         margin-left: 5%;
         margin-right: 10%;
     }
@@ -81,12 +96,13 @@ input::placeholder {
         font-family: 'Shrikhand', sans-serif;
         font-weight: lighter;
         text-align: left;
+        margin-top: 2%;
     }
 }
 .fa-heart {
     position: absolute;
     font-size: x-large;
-    top: 4.5%;
+    top: 2.5%;
     left: 84%;
     z-index: 1;
     overflow: hidden;
@@ -120,6 +136,7 @@ input::placeholder {
 
 .menu {
     margin-left: 5%;
+    margin-bottom: 10%;
     &__titre {
         font-size: medium;
         font-weight: 400;
@@ -138,6 +155,9 @@ input::placeholder {
         padding-top: 2%;
         animation: apparition 1s ease-in-out forwards;
         visibility: hidden;
+        &:hover {
+            box-shadow: 0px 4px 4px 1px $gris_ombre;
+        }
         &:nth-child(1){
             animation-delay: 0.3s;
         }
@@ -178,15 +198,38 @@ input::placeholder {
 
 @keyframes apparition{
     0% {
-        transform: translateY(0);
+        transform: translateZ(0);
         visibility: hidden;
     }
     100%{
-        transform: translateY(1);
+        transform: translateZ(1);
         visibility: visible;
     }
 }
 /* Fin Restaurant */
+
+
+.commander {
+    text-align: center;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    &__button {
+        border: none;
+        border-radius: 30px 30px;
+        font-size: large;
+        color: white;
+        background: linear-gradient($couleur_secondaire,$couleur_primaire);
+        box-shadow: 0 5px 10px 1px rgb(172, 172, 172);
+        font-family: 'Roboto',sans-serif;
+        padding: 15px 45px;
+        margin-bottom: 8%;
+        &:hover {
+            box-shadow: 0px 5px 5px 1px rgb(172, 172, 172);
+        }
+    }
+    
+}
+
 
 /* Footer */
 
