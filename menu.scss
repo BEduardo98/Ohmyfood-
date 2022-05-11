@@ -91,27 +91,31 @@ input::placeholder {
     z-index: 1;
     overflow: hidden;
 }
-
 .fa-heart:hover::after{
-    content: '';
-    z-index: -1;
+    font-family: FontAwesome;
+    content: "\f004";
     position: absolute;
-    bottom: 18%;
-    left: 0%;
-    height: 100%;
-    width: 100%;
-    border-radius: 20px 20px;
+    left: 0;
+    top: 0px;
+    width: 0%;
+    font-size: x-large;
+    overflow: hidden;
     background: linear-gradient($couleur_primaire, $couleur_secondaire);
-    animation: spin 6s ease-in-out infinite;
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent;
+    animation: fill 1s ease-in-out forwards;
 }
 
-@keyframes spin {
-    0%{
-        transform: translateY(100%) rotate(0deg);
+@keyframes fill {
+    0% {
+        width: 0%;
     }
-    100%{
-        transform: translateY(0%) rotate(360deg);
+    50% {
+        width: 50%;
     }
+    75%,100% {
+        width: 100%;
+    } 
 }
 
 .menu {
@@ -133,26 +137,18 @@ input::placeholder {
         margin-bottom: 4%;
         padding-top: 2%;
         animation: apparition 1s ease-in-out forwards;
-    }
-    @keyframes apparition{
-        0% {
-            transform: translateZ(0);
-            opacity: .1;
+        visibility: hidden;
+        &:nth-child(1){
+            animation-delay: 0.3s;
         }
-        17% {
-            transform: translateZ(.18);
+        &:nth-child(2){
+            animation-delay: 0.4s;
         }
-        24% {
-            transform: translateZ(.4);
+        &:nth-child(3){
+            animation-delay: 0.5s;
         }
-        46% {
-            transform: translateZ(.81);
-        }
-        85%,100% {
-            opacity: 1;
-        }
-        100% {
-            transform: translateZ(1);
+        &:nth-child(4){
+            animation-delay: 0.6s;
         }
     }
 
@@ -180,10 +176,17 @@ input::placeholder {
     }
 }
 
-
+@keyframes apparition{
+    0% {
+        transform: translateY(0);
+        visibility: hidden;
+    }
+    100%{
+        transform: translateY(1);
+        visibility: visible;
+    }
+}
 /* Fin Restaurant */
-
-
 
 /* Footer */
 
