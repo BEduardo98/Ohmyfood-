@@ -73,8 +73,8 @@ input::placeholder {
 }
 
 .image__modification {
-    object-fit: contain;
-    object-position: 0px -20px;
+    object-fit: cover;
+    object-position: 0px -60px;
     height: 150%;
     width: 100%;
 }
@@ -170,6 +170,9 @@ input::placeholder {
         &:nth-child(4){
             animation-delay: 0.6s;
         }
+        &:nth-child(5){
+            animation-delay: 0.7s;
+        }
         &:hover .validation {
             display: flex;
             justify-content: center;
@@ -180,6 +183,7 @@ input::placeholder {
         &:hover .menu__prix {
             padding-right: 50px;
             transition: 0.5s ease-in-out;
+            white-space: nowrap;
         }
     }
 
@@ -197,12 +201,17 @@ input::placeholder {
         margin-left: 2%;
         margin-bottom: 0%;
         font-size: medium;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
     }
 
     &__texte {
         margin: 0%;
         font-size: small;
-        
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
     }
     &__prix {
         font-weight: bold;
