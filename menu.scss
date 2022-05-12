@@ -170,6 +170,17 @@ input::placeholder {
         &:nth-child(4){
             animation-delay: 0.6s;
         }
+        &:hover .validation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: glissement 0.5s ease-in-out forwards;
+            transform-origin: right;
+        }
+        &:hover .menu__prix {
+            padding-right: 50px;
+            transition: 0.5s ease-in-out;
+        }
     }
 
     &__position {
@@ -185,15 +196,59 @@ input::placeholder {
         margin-top: 1%;
         margin-left: 2%;
         margin-bottom: 0%;
+        font-size: medium;
     }
 
     &__texte {
         margin: 0%;
+        font-size: small;
+        
     }
     &__prix {
         font-weight: bold;
         text-align: right;
     }
+}
+
+
+@keyframes glissement {
+    0% {
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(-50px);
+    }
+    
+}
+
+.validation {
+    display: none;
+    position: absolute;
+    border: 1px solid $couleur_tertiaire;
+    background: $couleur_tertiaire;
+    border-radius: 0 15px 15px 0;
+    left: 83%;
+    bottom: -1px;
+    padding:0px 20px;
+    height: 100%;
+    
+}
+
+.fa-circle-check {
+    font-size: 20px;
+    color: white;
+    transform: rotate(180deg);
+    animation: rotate 0.5s both;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+    
 }
 
 @keyframes apparition{
