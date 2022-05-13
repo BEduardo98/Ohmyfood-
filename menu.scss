@@ -1,7 +1,14 @@
 /* Général */
+@mixin tablette {
+    @media screen and (min-width: 767px) and (max-width: 900px) {
+        @content
+    }
+}
+
 * {
     margin-left: 0%;
     margin-right: 0%;
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -17,18 +24,6 @@ $gris_tertiaire : #f6f6f6;
 $gris_texte : #353535;
 $gris_ombre:#c7c7c7;
 
-p,a,h1,h2,h3 {
-    font-family: 'Roboto', sans-serif;
-}
-
-input::placeholder {
-    color: $gris_texte;
-}
-
-.fa-location-dot {
-    margin-right: 2% ;
-    color: $gris_texte;
-}
 
 /* Fin Général */
 
@@ -37,10 +32,17 @@ input::placeholder {
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
+    @include tablette {
+        justify-content: space-between;
+        width: 90%;
+    }
     &__logo {
         text-align: center;
         padding-top: 2%;
-        padding-bottom: 2%;  
+        padding-bottom: 2%;
+        @include tablette {
+            text-align: left;
+        }  
     }
 
     &__logo img {
@@ -70,6 +72,9 @@ input::placeholder {
     @media screen and (max-width:350px) {
         height: 160px;
     }
+    @include tablette {
+        height: 350px;
+    }
 }
 
 .image__modification {
@@ -77,6 +82,10 @@ input::placeholder {
     object-position: 0px -60px;
     height: 150%;
     width: 100%;
+    @include tablette {
+        height: 120%;
+        object-position: 0px -80px;
+    }
 }
 
 /* Fin image de fond */
@@ -97,6 +106,9 @@ input::placeholder {
         font-weight: lighter;
         text-align: left;
         margin-top: 2%;
+        @include tablette {
+            font-size: 2.5em;
+        }
     }
 }
 .fa-heart {
@@ -106,6 +118,11 @@ input::placeholder {
     left: 84%;
     z-index: 1;
     overflow: hidden;
+    @include tablette {
+        top: 3.5%;
+        left: 90%;
+        font-size: xx-large;
+    }
 }
 .fa-heart:hover::after{
     font-family: FontAwesome;
@@ -120,6 +137,9 @@ input::placeholder {
     -webkit-background-clip: text; 
     -webkit-text-fill-color: transparent;
     animation: fill 1s ease-in-out forwards;
+    @include tablette {
+        font-size: xx-large;
+    }
 }
 
 @keyframes fill {
@@ -143,6 +163,10 @@ input::placeholder {
         border-bottom: 3px solid $couleur_tertiaire;
         width: 10%;
         padding-bottom: 1%;
+        @include tablette {
+            font-size: 1.8em;
+            width: 50%;
+        }
     }
     &__choix {
         position: relative;
@@ -204,6 +228,9 @@ input::placeholder {
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
+        @include tablette {
+            font-size: 1.5em;
+        }
     }
 
     &__texte {
@@ -212,10 +239,16 @@ input::placeholder {
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
+        @include tablette {
+            font-size: 1.2em;
+        }
     }
     &__prix {
         font-weight: bold;
         text-align: right;
+        @include tablette {
+            font-size: 1.1em;
+        }
     }
 }
 
@@ -240,6 +273,10 @@ input::placeholder {
     bottom: -1px;
     padding:0px 20px;
     height: 100%;
+    @include tablette {
+        left: 90%;
+        padding: 0px 25px;
+    }
     
 }
 
@@ -287,6 +324,9 @@ input::placeholder {
         font-family: 'Roboto',sans-serif;
         padding: 15px 45px;
         margin-bottom: 8%;
+        @include tablette {
+            font-size: 1.5em;
+        }
         &:hover {
             box-shadow: 0px 5px 5px 1px rgb(172, 172, 172);
         }
@@ -302,6 +342,9 @@ input::placeholder {
     background-color: #353535;
     padding-top: 8%;
     padding-left: 5%;
+    @include tablette {
+        height: 300px;
+    }
     &__img {
         width: 30%;
         margin-bottom: 5%;
@@ -321,6 +364,9 @@ input::placeholder {
     text-decoration: none;
     color: white;
     padding-bottom: 2%;
+    @include tablette {
+        font-size: 1.5em;
+    }
     &:hover {
         font-weight: bold;
         text-decoration: underline;
