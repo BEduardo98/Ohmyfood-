@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/c3a8cc6a3c.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;700&family=Shrikhand&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;700&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="main.css">
+        <title>Ohmyfood!</title>
+    </head>
+
+    <body>
+        <!-- Header -->
+        <header class="header">
+            <div class="header__logo">
+                <img src="images/logo/ohmyfood.png" alt="Ohmyfood logo" >
+            </div>
+            
+        </header>
+        
+        <main>
+            <div class="container">
+                <h1 class="titre_formulaire">Formulaire de contact</h1>
+                <form action="/action_page.php">
+                  <label for="nom_prenom" class="formulaire">Nom & prénom</label>
+                  <input type="text" id="nom_prenom" name="nom" placeholder="Votre nom et prénom">
+              
+                  <label for="sujet" class="formulaire">Sujet</label>
+                  <input type="text" id="sujet" name="sujet" placeholder="L'objet de votre message">
+              
+                  <label for="email_adresse" class="formulaire">Email</label>
+                  <input id="email_adresse" type="email" name="email" placeholder="Votre email">
+              
+              
+                  <label for="messsage" class="formulaire">Message</label>
+                  <textarea id="message" name="message" placeholder="Votre message" style="height:200px"></textarea>
+              
+                  <input type="submit" value="Envoyer" id="envoyer_message">
+                </form>
+              </div>
+        </main>
+
+        <footer class="footer">
+            <img src="images/logo/ohmyfood@2x.svg" alt="Logo Ohmyfood!" class="footer__img">
+            <div class="footer__pages">
+                <div class="footer__ensemble">
+                    <i class="fa-solid fa-utensils"></i>
+                    <a href="">Proposer un restaurant</a>
+                </div>
+                <div class="footer__ensemble">
+                    <i class="fa-solid fa-handshake-angle"></i>
+                    <a href="">Devenir partenaire</a>
+                </div>
+                <a href="">Mentions légales</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </footer>
+
+    </body>
+
+
+
+
+</html>
