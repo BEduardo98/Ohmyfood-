@@ -1,4 +1,16 @@
 /* Général */
+@mixin tablette {
+    @media screen and (min-width: 767px) and (max-width: 900px) {
+        @content
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: 899px){
+        @content
+    }
+}
+
 * {
     margin-left: 0%;
     margin-right: 0%;
@@ -85,6 +97,9 @@ main{
 /* Header */
 input {
     width: 40%;
+    @include tablette {
+        width: 30%;
+    }
 }
 .header {
     &__logo {
@@ -92,11 +107,17 @@ input {
         box-shadow: 0px 15px 15px 1px $gris_ombre;
         padding-top: 2%;
         padding-bottom: 2%;
-        margin-bottom: 0.5%;   
+        margin-bottom: 0.5%;
+        @include tablette {
+            padding: 0%;
+        } 
     }
 
     &__logo img {
         width: 50%;
+        @include tablette {
+            width: 50%;
+        }
     }
 
     &__search {
@@ -104,6 +125,9 @@ input {
         text-align: center;
         padding-top: 4% ;
         padding-bottom: 4%;
+        @include tablette {
+            padding: 2%;
+        }
     }
 
     &__searchzone{
@@ -112,6 +136,10 @@ input {
         font-size: medium;
         font-weight: bold;
         background-color: $gris_primaire ;
+        @include tablette {
+            font-size: 1.5em;
+            text-align: center;
+        }
     }
 }
 
@@ -127,12 +155,19 @@ input {
     &__titre {
         margin-top: 0%;
         width: 99%;
+        @include tablette {
+            font-size: 2.5em;
+        }
     }
     &__paragraph {
         width: 95%;
         font-size: large;
         color: $gris_secondaire;
         margin-bottom: 8%;
+        @include tablette {
+            width: 100%;
+            font-size: 1.5em;
+        }
     }
     &__button {
         border: none;
@@ -144,6 +179,11 @@ input {
         font-family: 'Roboto',sans-serif;
         padding: 13px 25px;
         margin-bottom: 8%;
+        @include tablette {
+            font-size: 1.5em;
+            font-weight: bold;
+            padding: 15px 30px;
+        }
         &:hover {
             box-shadow: 0px 5px 5px 1px rgb(172, 172, 172);
         }     
@@ -156,6 +196,19 @@ input {
     margin-left: 5%;
     margin-top: 10%;
     margin-bottom: 20%;
+    @include tablette {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+    &_grand_titre {
+        @include tablette{
+            font-size: 2.5em;
+        }
+    }
     &__choix {
         display: flex;
         align-items: center;
@@ -166,6 +219,9 @@ input {
         background-color: $gris_tertiaire;
         margin-bottom: 5%;
         box-shadow: 0px 4px 10px 1px $gris_ombre;
+        @include tablette {
+            width: 70%;
+        }
     }
     &__choix:hover {
         background-color: lighten($couleur_primaire, $amount: 35);
@@ -178,6 +234,9 @@ input {
     &__titre {
         font-weight: bold;
         width: 100%;
+        @include tablette {
+            font-size: 1.5em;
+        }
     }
 }
 
@@ -210,17 +269,26 @@ input {
 .mobile__screen{
     margin-right: 5%;
     color: $gris_secondaire;
+    @include tablette {
+        font-size: larger;
+    }
     
 }
 
 .liste__ul {
     margin-right: 5%;
     color: $gris_secondaire;
+    @include tablette {
+        font-size: larger;
+    }
 }
 
 .store__icon {
     margin-right: 5%;
     color: $gris_secondaire;
+    @include tablette {
+        font-size: larger;
+    }
 }
 
 /* Fin fonctionnement */
@@ -232,8 +300,16 @@ input {
     width: 100%;
     height: 1100px;
     padding-top: 5%;
+    @include tablette {
+        height: 1500px;
+        background-color: white;
+    }
     &__principal {
         margin-left: 5%;
+        @include tablette {
+            font-size: 2.5em;
+            text-align: center;
+        }
     }
     &__liste {
         display: flex;
@@ -256,6 +332,10 @@ input {
     font-weight: 500;
     color: darken($couleur_tertiaire, $amount: 35);
     padding: 0.2% 2%;
+    @include tablette {
+        font-size: 1em;
+        left: 80%;
+    }
 }
 
 .restaurant {
@@ -267,6 +347,9 @@ input {
     height : 20%;
     margin-bottom: 5%;
     box-shadow: 0px 4px 10px 1px $gris_ombre;
+    @include tablette {
+        width: 80%;
+    }
         &:hover {
             box-shadow: 0px 4px 4px 1px $gris_ombre;
         }
@@ -280,10 +363,16 @@ input {
             margin-bottom: 0%;
             margin-top: 2%;
             margin-left: 2%;
+            @include tablette {
+                font-size: 1.3em;
+            }
         }
         &__texte {
             margin-left: 2%;
-            margin-top: 1%; 
+            margin-top: 1%;
+            @include tablette{
+                font-size: 1.1em;
+            } 
         }
         &__link {
             position: absolute;
@@ -304,6 +393,10 @@ input {
     top:0%;
     left: 87%;
     font-size: x-large;
+    @include tablette{
+        font-size: xx-large;
+        left: 90%;
+    }
 }
 .fa-heart:hover::after{
     font-family: FontAwesome;
@@ -318,6 +411,9 @@ input {
     -webkit-background-clip: text; 
     -webkit-text-fill-color: transparent;
     animation: fill 1s ease-in-out forwards;
+    @include tablette {
+        font-size: xx-large;
+    }
 }
 
 @keyframes fill {
@@ -341,6 +437,9 @@ input {
     background-color: #353535;
     padding-top: 8%;
     padding-left: 5%;
+    @include tablette{
+        height: 290px;
+    }
     &__img {
         width: 30%;
         margin-bottom: 5%;
@@ -360,6 +459,9 @@ input {
     text-decoration: none;
     color: white;
     padding-bottom: 2%;
+    @include tablette{
+        font-size: 1.5em;
+    }
     &:hover {
         font-weight: bold;
         text-decoration: underline;
@@ -419,6 +521,9 @@ input {
     max-width: 440px;
     margin:0 auto;
     font-family: 'Roboto', sans-serif;
+    @include tablette {
+        max-width: max-content;
+    }
   }
   .titre_formulaire  {
     color: $couleur_primaire;
