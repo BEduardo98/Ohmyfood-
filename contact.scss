@@ -1,0 +1,357 @@
+/* Général */
+@mixin tablette {
+    @media screen and (min-width: 768px) and (max-width: 1023) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width:1024px) and (max-width:1280px) {
+        @content;
+        
+    }
+}
+
+@mixin large-desktop {
+    @media screen and (min-width:1280px) {
+        @content;
+    }
+}
+
+* {
+    margin-left: 0%;
+    margin-right: 0%;
+}
+
+body {
+    margin-bottom: 0%;
+}
+
+$couleur_primaire : #9356DC;
+$couleur_secondaire : #FF79DA;
+$couleur_tertiaire : #99E2D0;
+$gris_primaire: rgb(231, 231, 231);
+$gris_secondaire: #848484;
+$gris_tertiaire : #f6f6f6;
+$gris_texte : #353535;
+$gris_ombre:#c7c7c7;
+
+p,a,h1,h2,h3 {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Fin Général */
+
+main {
+    animation: loading 3s ease-in-out both;
+}
+
+@keyframes loading {
+    0% {
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+    
+}
+
+/*Loading page */
+.loading__page {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 55%;
+    left: 40%;
+    z-index: 1;
+    border-radius: 50%;
+    color: grey;
+    background: currentColor;
+    box-shadow: 32px 0 , -32px 0 ,  64px 0;
+    animation: vue 3s ease-in-out both;
+    @include tablette {
+        top: 30%;
+        left: 49%;
+    }
+    @include desktop {
+        top:30%;
+        left: 49%;
+    }
+    @include large-desktop{
+        top: 25%;
+        left: 50%;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        left: -32px;
+        top: 0;
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+        z-index: 1;
+        background:$couleur_primaire;
+        animation: move 3s linear infinite alternate;
+    }
+}
+
+@keyframes vue {
+    0% {
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+    
+}
+
+
+@keyframes move {
+    0% , 5%{
+      left: -32px;
+      width: 20px;
+    }
+    15% , 20%{
+      left: -32px;
+      width: 50px;
+    }
+    30% , 35%{
+      left: 0px;
+      width: 20px;
+    }
+    45% , 50%{
+      left: 0px;
+      width: 50px;
+    }
+    60% , 65%{
+      left: 32px;
+      width: 20px;
+    }
+  
+    75% , 80% {
+      left: 32px;
+      width: 50px;
+    }
+    95%, 100% {
+      left: 64px;
+      width: 20px;
+      opacity: 0;
+    }
+}
+
+/*Fin Loading page */
+.retour {
+    position: relative;
+    margin-left: 2%;
+    font-size: larger;
+    width: 5%;
+    &__link {
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        bottom: 0%;
+        width: 100%;
+    }
+}
+
+/* Header */
+.header {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    box-shadow: 0px 15px 15px 1px $gris_ombre;
+    @include tablette {
+        justify-content: space-evenly;
+        width: 95%;
+        box-shadow: none;
+    }
+    @include desktop {
+        justify-content: space-between;
+        box-shadow: none;
+        width: 80%;
+    }
+    @include large-desktop{
+        justify-content: space-between;
+        width: 80%;
+        box-shadow: none;
+        
+    }
+    &__logo {
+        text-align: center; 
+        padding-top: 2%;
+        padding-bottom: 2%;
+        margin-bottom: 0.5%;
+        @include tablette {
+            padding: 0%;
+            text-align: left;
+        }
+        @include desktop {
+            padding: 0%;
+            text-align: left;
+            width: 50%;
+        }
+        @include large-desktop{
+            padding: 0%;
+            text-align: left;
+            width: 50%;
+        } 
+    }
+
+    &__logo img {
+        width: 50%;
+    }
+}
+
+/* Fin Header */
+
+
+
+/* Formulaire de contact */
+
+#nom_prenom, #sujet, #email_adresse, #message {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    margin-right: 0px;
+    margin-left: 0px;
+    resize: vertical;
+  }
+  .formulaire{
+    margin-right: 0px;
+    margin-left: 0px;
+    width: 100%;
+}
+  
+  #envoyer_message {
+    background-color: $couleur_primaire;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    &:hover{
+        background-color: darken($couleur_primaire, $amount: 5);
+    }
+  }
+  
+  .container {
+    box-sizing : border-box;
+    border-radius:5px;
+    background-color:#f2f2f2;
+    padding:20px;
+    width: 100%;
+    max-width: 440px;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+    @include tablette {
+        max-width: max-content;
+    }
+    @include desktop {
+        max-width: max-content;
+        padding:3% 5%;
+    }
+    @include large-desktop {
+        max-width: max-content;
+        margin: 0%;
+        padding-right: 40%;
+    }
+
+  }
+  .titre_formulaire  {
+    color: $couleur_primaire;
+    width: 100%;
+  }
+
+
+/* Fin Formulaire de contact */
+
+/* Footer */
+
+.footer {
+    height: 200px;
+    background-color: #353535;
+    padding-top: 8%;
+    padding-left: 5%;
+    @include tablette{
+        height: 290px;
+    }
+    @include desktop {
+        height: auto;
+        padding-top: 2%;
+        padding-left: 2%;
+    }
+    @include large-desktop{
+        height: auto;
+        padding-top: 2%;
+        padding-left: 2%;
+        padding-bottom: 2%;
+    }
+    &__img {
+        width: 30%;
+        margin-bottom: 5%;
+        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(129deg) brightness(104%) contrast(107%);
+        @include desktop {
+            width: 10%;
+            margin-bottom: 2%;
+        }
+        @include large-desktop{
+            width: 10%;
+            margin-bottom: 2%;
+        }
+        
+    }
+    &__pages {
+        display: flex;
+        flex-direction: column;
+        @include desktop {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        @include large-desktop{
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+    &__ensemble {
+        margin-bottom:2%;
+        @include desktop {
+            width: 100%;
+            margin-right: 2%;
+        }
+        @include large-desktop{
+            width: 100%;
+            margin-right: 2%;
+        }
+    }
+}
+
+.footer a {
+    text-decoration: none;
+    color: white;
+    padding-bottom: 2%;
+    @include tablette{
+        font-size: 1.5em;
+    }
+    &:hover {
+        font-weight: bold;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+
+.fa-utensils {
+    color: white;
+    margin-right: 3%;
+}
+
+.fa-handshake-angle {
+    color: white;
+    margin-right: 2%;
+}
+/* Fin Footer */
