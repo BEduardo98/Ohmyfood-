@@ -1,6 +1,6 @@
 /* Général */
 @mixin tablette {
-    @media screen and (min-width: 768px) and (max-width: 1023) {
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
         @content;
     }
 }
@@ -161,7 +161,7 @@ main {
     align-items: center;
     box-shadow: 0px 15px 15px 1px $gris_ombre;
     @include tablette {
-        justify-content: space-evenly;
+        justify-content: space-between;
         width: 95%;
         box-shadow: none;
     }
