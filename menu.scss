@@ -1,7 +1,20 @@
 /* Général */
 @mixin tablette {
-    @media screen and (min-width: 767px) and (max-width: 900px) {
-        @content
+    @media screen and (min-width: 760px) and (max-width: 1023px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width:1024px) and (max-width:1280px) {
+        @content;
+        
+    }
+}
+
+@mixin large-desktop {
+    @media screen and (min-width:1280px) {
+        @content;
     }
 }
 
@@ -36,17 +49,38 @@ $gris_ombre:#c7c7c7;
         justify-content: space-between;
         width: 90%;
     }
+    @include desktop {
+        justify-content: space-between;
+        width: 80%;
+    }
+    @include large-desktop{
+        justify-content: space-between;
+        width: 70%;
+    }
     &__logo {
         text-align: center;
         padding-top: 2%;
         padding-bottom: 2%;
         @include tablette {
             text-align: left;
+        }
+        @include desktop{
+            text-align: left;
         }  
     }
 
     &__logo img {
         width: 50%;
+        @include tablette{
+            width: 90%;
+        }
+        @include desktop {
+            align-items: center;
+            width: 60%;
+        }
+        @include large-desktop{
+            width: 60%;
+        }
     }
 }
 
@@ -75,6 +109,12 @@ $gris_ombre:#c7c7c7;
     @include tablette {
         height: 350px;
     }
+    @include desktop {
+        height: 480px;
+    }
+    @include large-desktop{
+        height: 600px;
+    }
 }
 
 .image__modification {
@@ -85,6 +125,10 @@ $gris_ombre:#c7c7c7;
     @include tablette {
         height: 120%;
         object-position: 0px -80px;
+    }
+    @include large-desktop{
+        height: 120%;
+        object-position: 0px -200px;
     }
 }
 
@@ -97,9 +141,18 @@ $gris_ombre:#c7c7c7;
     background-color: $gris_tertiaire;
     border-radius: 40px 40px 0px 0px;
     position: relative;
+    @include desktop {
+        padding-top: 1%;
+    }
+    @include large-desktop{
+        padding-top: 1%;
+    }
     &__nom{
         margin-left: 5%;
         margin-right: 10%;
+        @include desktop {
+            margin-right: 0%;
+        }
     }
     &__titre {
         font-family: 'Shrikhand', sans-serif;
@@ -107,6 +160,14 @@ $gris_ombre:#c7c7c7;
         text-align: left;
         margin-top: 2%;
         @include tablette {
+            font-size: 2.5em;
+        }
+        @include desktop {
+            margin-bottom: 5%;
+            font-size: 2em;
+        }
+        @include large-desktop{
+            margin-bottom: 5%;
             font-size: 2.5em;
         }
     }
@@ -121,6 +182,16 @@ $gris_ombre:#c7c7c7;
     @include tablette {
         top: 3.5%;
         left: 90%;
+        font-size: xx-large;
+    }
+    @include desktop {
+        left: 92%;
+        top: 1.5%;
+        font-size: xx-large;
+    }
+    @include large-desktop{
+        left: 92%;
+        top: 1.9%;
         font-size: xx-large;
     }
 }
@@ -140,6 +211,12 @@ $gris_ombre:#c7c7c7;
     @include tablette {
         font-size: xx-large;
     }
+    @include desktop {
+        font-size: xx-large;
+    }
+    @include large-desktop{
+        font-size: xx-large;
+    }
 }
 
 @keyframes fill {
@@ -157,6 +234,20 @@ $gris_ombre:#c7c7c7;
 .menu {
     margin-left: 5%;
     margin-bottom: 10%;
+    @include desktop {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 2%;
+        margin-left: 0%;
+    }
+    @include large-desktop{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 2%;
+        margin-left: 0%;
+    }
     &__titre {
         font-size: medium;
         font-weight: 400;
@@ -166,6 +257,20 @@ $gris_ombre:#c7c7c7;
         @include tablette {
             font-size: 1.8em;
             width: 50%;
+        }
+        @include desktop {
+            font-weight: bold;
+            text-align: center;
+            width: 60%;
+            padding-top: 1%;
+            margin-bottom: 2%;
+        }
+        @include large-desktop{
+            font-weight: bold;
+            text-align: center;
+            width: 60%;
+            margin-bottom: 2%;
+            font-size: 1.5em;
         }
     }
     &__choix {
@@ -179,23 +284,31 @@ $gris_ombre:#c7c7c7;
         padding-top: 2%;
         animation: apparition 1s ease-in-out forwards;
         visibility: hidden;
+        @include desktop {
+            width: 60%;
+            padding-top: 1%;
+        }
+        @include large-desktop{
+            width: 60%;
+            padding-top: 1%;
+        }
         &:hover {
             box-shadow: 0px 4px 4px 1px $gris_ombre;
         }
         &:nth-child(1){
-            animation-delay: 0.3s;
+            animation-delay: 0.8s;
         }
         &:nth-child(2){
-            animation-delay: 0.4s;
+            animation-delay: 0.9s;
         }
         &:nth-child(3){
-            animation-delay: 0.5s;
+            animation-delay: 1s;
         }
         &:nth-child(4){
-            animation-delay: 0.6s;
+            animation-delay: 1.3s;
         }
         &:nth-child(5){
-            animation-delay: 0.7s;
+            animation-delay: 1.4s;
         }
         &:hover .validation {
             display: flex;
@@ -231,6 +344,9 @@ $gris_ombre:#c7c7c7;
         @include tablette {
             font-size: 1.5em;
         }
+        @include large-desktop{
+            font-size: 1.4em;
+        }
     }
 
     &__texte {
@@ -242,11 +358,17 @@ $gris_ombre:#c7c7c7;
         @include tablette {
             font-size: 1.2em;
         }
+        @include large-desktop{
+            font-size: 1.2em;
+        }
     }
     &__prix {
         font-weight: bold;
         text-align: right;
         @include tablette {
+            font-size: 1.1em;
+        }
+        @include large-desktop{
             font-size: 1.1em;
         }
     }
@@ -277,7 +399,14 @@ $gris_ombre:#c7c7c7;
         left: 90%;
         padding: 0px 25px;
     }
-    
+    @include desktop {
+        left: 90%;
+        padding: 0px 20px; 
+    }
+    @include large-desktop{
+        left: 92%;
+        padding:0px 35px;
+    }
 }
 
 .fa-circle-check {
@@ -314,6 +443,14 @@ $gris_ombre:#c7c7c7;
     text-align: center;
     padding-top: 10%;
     padding-bottom: 10%;
+    @include desktop {
+        padding-top: 5%;
+        padding-bottom: 5%;
+    }
+    @include large-desktop{
+        padding-top: 5%;
+        padding-bottom: 5%;
+    }
     &__button {
         border: none;
         border-radius: 30px 30px;
@@ -326,6 +463,10 @@ $gris_ombre:#c7c7c7;
         margin-bottom: 8%;
         @include tablette {
             font-size: 1.5em;
+        }
+        @include large-desktop{
+            font-size: 1.5em;
+            margin-bottom: 5%;
         }
         &:hover {
             box-shadow: 0px 5px 5px 1px rgb(172, 172, 172);
@@ -345,18 +486,54 @@ $gris_ombre:#c7c7c7;
     @include tablette {
         height: 300px;
     }
+    @include desktop {
+        height: auto;
+        padding-top: 2%;
+        padding-left: 2%;
+    }
+    @include large-desktop{
+        height: auto;
+        padding-top:2%;
+        padding-left: 2%;
+    }
     &__img {
         width: 30%;
         margin-bottom: 5%;
-        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(129deg) brightness(104%) contrast(107%)
+        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(129deg) brightness(104%) contrast(107%);
+        @include desktop {
+            width: 10%;
+            margin-bottom: 2%;
+        }
+        @include large-desktop{
+            width: 20%;
+            margin-bottom: 2%;
+        }
         
     }
     &__pages {
         display: flex;
         flex-direction: column;
+        @include desktop {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        @include large-desktop {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
     }
     &__ensemble {
         margin-bottom:2%;
+        @include desktop {
+            width: 100%;
+            margin-right: 2%;
+        }
+        @include large-desktop {
+            width: 100%;
+            margin-right: 2%;
+        }
     }
 }
 
@@ -366,6 +543,9 @@ $gris_ombre:#c7c7c7;
     padding-bottom: 2%;
     @include tablette {
         font-size: 1.5em;
+    }
+    @include large-desktop {
+        font-size: 1.2em;
     }
     &:hover {
         font-weight: bold;
