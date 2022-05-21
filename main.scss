@@ -1,13 +1,14 @@
 /* Général */
 @mixin tablette {
-    @media screen and (min-width: 767px) and (max-width: 900px) {
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
         @content
     }
 }
 
 @mixin desktop {
-    @media screen and (min-width: 899px){
+    @media screen and (min-width:1023px) {
         @content
+        
     }
 }
 
@@ -19,6 +20,8 @@
 body {
     margin-bottom: 0%;
 }
+
+
 
 $couleur_primaire : #9356DC;
 $couleur_secondaire : #FF79DA;
@@ -40,22 +43,22 @@ input::placeholder {
 .fa-location-dot {
     margin-right: 2% ;
     color: $gris_texte;
+    @include desktop{
+        margin-right: 0%;
+    }
 }
 
 /* Fin Général */
 
-main{
-    animation: opacite 1.3s linear both;
+main {
+    animation: loading 3s ease-in-out both;
 }
 
-@keyframes opacite {
+@keyframes loading {
     0% {
         opacity: 0;
     }
-    75%{
-        opacity: 0.3;
-    }
-    100% {
+    100%{
         opacity: 1;
     }
     
@@ -63,42 +66,95 @@ main{
 
 /*Loading page */
 .loading__page {
-    width: 100px;
-    height: 100px;
-    border-color: $couleur_primaire;
-    animation: spinner 1.5s linear both;
-    background: linear-gradient($couleur_secondaire,$couleur_primaire);
-    border-style: solid;
-    border-width: 2px;
-    border-radius: 50%;
+    width: 20px;
+    height: 20px;
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 40%;
-    right: 50%;
+    z-index: 1;
+    border-radius: 50%;
+    color: grey;
+    background: currentColor;
+    box-shadow: 32px 0 , -32px 0 ,  64px 0;
+    animation: vue 3s ease-in-out both;
+    @include tablette {
+        left: 48%;
+        top: 47%;
+        
+    }
+    @include desktop{
+        left: 50%;
+        top: 50%;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        left: -32px;
+        top: 0;
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+        z-index: 1;
+        background: $couleur_primaire;
+        animation: move 3s linear infinite alternate;
+    }
 }
 
-@keyframes spinner {
-    0%{
+@keyframes vue {
+    0% {
         opacity: 1;
-        transform: rotate(0deg);
     }
-    75% {
-        opacity: 0.1;
-    }
-    100% {
+    100%{
         opacity: 0;
-        transform: rotate(360deg);
     }
     
 }
 
+
+@keyframes move {
+    0% , 5%{
+      left: -32px;
+      width: 20px;
+    }
+    15% , 20%{
+      left: -32px;
+      width: 50px;
+    }
+    30% , 35%{
+      left: 0px;
+      width: 20px;
+    }
+    45% , 50%{
+      left: 0px;
+      width: 50px;
+    }
+    60% , 65%{
+      left: 32px;
+      width: 20px;
+    }
+  
+    75% , 80% {
+      left: 32px;
+      width: 50px;
+    }
+    95%, 100% {
+      left: 64px;
+      width: 20px;
+      opacity: 0;
+    }
+}
+
 /*Fin Loading page */
+
 
 /* Header */
 input {
     width: 40%;
     @include tablette {
         width: 30%;
+    }
+    @include desktop{
+        width: 15%;
     }
 }
 .header {
@@ -110,6 +166,10 @@ input {
         margin-bottom: 0.5%;
         @include tablette {
             padding: 0%;
+        }
+        @include desktop{
+            padding: 0%;
+            box-shadow: none;
         } 
     }
 
@@ -117,6 +177,9 @@ input {
         width: 50%;
         @include tablette {
             width: 50%;
+        }
+        @include desktop{
+            width: 30%;
         }
     }
 
@@ -126,6 +189,9 @@ input {
         padding-top: 4% ;
         padding-bottom: 4%;
         @include tablette {
+            padding: 2%;
+        }
+        @include desktop{
             padding: 2%;
         }
     }
@@ -140,6 +206,10 @@ input {
             font-size: 1.5em;
             text-align: center;
         }
+        @include desktop{
+            font-size: 1.2em;
+            text-align: center;
+        }
     }
 }
 
@@ -152,11 +222,20 @@ input {
     background-color: $gris_tertiaire;
     padding-top: 5%;
     padding-bottom: 5%;
+    @include desktop{
+        padding-top: 3%;
+        padding-bottom: 2%;
+    }
     &__titre {
         margin-top: 0%;
         width: 99%;
         @include tablette {
             font-size: 2.5em;
+        }
+        @include desktop {
+            width: 100%;
+            margin-bottom: 3%;
+            text-align: center;
         }
     }
     &__paragraph {
@@ -167,6 +246,11 @@ input {
         @include tablette {
             width: 100%;
             font-size: 1.5em;
+        }
+        @include desktop {
+            margin-bottom: 3%;
+            text-align: center;
+            width: 100%;
         }
     }
     &__button {
@@ -183,6 +267,10 @@ input {
             font-size: 1.5em;
             font-weight: bold;
             padding: 15px 30px;
+        }
+        @include desktop{
+            margin-bottom: 5%;
+
         }
         &:hover {
             box-shadow: 0px 5px 5px 1px rgb(172, 172, 172);
@@ -204,8 +292,19 @@ input {
         margin-top: 5%;
         margin-bottom: 5%;
     }
+    @include desktop {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
     &_grand_titre {
         @include tablette{
+            font-size: 2.5em;
+        }
+        @include desktop{
             font-size: 2.5em;
         }
     }
@@ -221,6 +320,9 @@ input {
         box-shadow: 0px 4px 10px 1px $gris_ombre;
         @include tablette {
             width: 70%;
+        }
+        @include desktop {
+            width: 50%;
         }
     }
     &__choix:hover {
@@ -304,11 +406,21 @@ input {
         height: 1500px;
         background-color: white;
     }
+    @include desktop {
+        background-color: white;
+        padding-top: 0%;
+    }
     &__principal {
         margin-left: 5%;
         @include tablette {
             font-size: 2.5em;
             text-align: center;
+        }
+        @include desktop{
+            text-align: center;
+            margin-left: 0%;
+            margin-bottom: 0%;
+            font-size: 2.5em;
         }
     }
     &__liste {
@@ -317,7 +429,14 @@ input {
         align-items: center;
         width: 100%;
         height: 100%;
+        @include desktop{
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-around;
+        }
     }
+    
 }
 
 .texte__nouveau {
@@ -336,6 +455,9 @@ input {
         font-size: 1em;
         left: 80%;
     }
+    @include desktop {
+        left: 80%;
+    }
 }
 
 .restaurant {
@@ -349,6 +471,13 @@ input {
     box-shadow: 0px 4px 10px 1px $gris_ombre;
     @include tablette {
         width: 80%;
+    }
+    @include desktop{
+        width: 45%;
+        margin-bottom: 0%;
+        margin-right: 2%;
+        margin-left: 2%;
+        height: 25%;
     }
         &:hover {
             box-shadow: 0px 4px 4px 1px $gris_ombre;
@@ -397,6 +526,9 @@ input {
         font-size: xx-large;
         left: 90%;
     }
+    @include desktop {
+        left: 90%;
+    }
 }
 .fa-heart:hover::after{
     font-family: FontAwesome;
@@ -440,18 +572,36 @@ input {
     @include tablette{
         height: 290px;
     }
+    @include desktop{
+        height: auto;
+        padding-top: 2%;
+        padding-left: 2%;
+    }
     &__img {
         width: 30%;
         margin-bottom: 5%;
-        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(129deg) brightness(104%) contrast(107%)
+        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(129deg) brightness(104%) contrast(107%);
+        @include desktop {
+            width: 20%;
+            margin-bottom: 2%;
+        }
         
     }
     &__pages {
         display: flex;
         flex-direction: column;
+        @include desktop {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
     }
     &__ensemble {
         margin-bottom:2%;
+        @include desktop {
+            margin-right: 2%;
+            width: 100%;
+        }
     }
 }
 
@@ -532,3 +682,4 @@ input {
 
 
 /* Fin Formulaire de contact */
+
