@@ -288,6 +288,7 @@ input {
         @include large-desktop{
             margin-bottom: 3%;
             width: 100%;
+            font-size: 1.3em;
         }
     }
     &__button {
@@ -311,6 +312,7 @@ input {
         }
         @include large-desktop{
             margin-bottom: 5%;
+            font-size: 1.5em;
         }
         &:hover {
             box-shadow: 0px 5px 5px 1px rgb(172, 172, 172);
@@ -340,12 +342,24 @@ input {
         margin-top: 5%;
         margin-bottom: 5%;
     }
+    @include large-desktop{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        margin-left: 0%;
+    }
     &_grand_titre {
         @include tablette{
             font-size: 2.5em;
         }
         @include desktop{
             font-size: 2.5em;
+        }
+        @include large-desktop{
+            font-size: 2em;
         }
     }
     &__choix {
@@ -364,6 +378,9 @@ input {
         @include desktop {
             width: 50%;
         }
+        @include large-desktop {
+            width: 50%;
+        }
     }
     &__choix:hover {
         background-color: lighten($couleur_primaire, $amount: 35);
@@ -378,6 +395,9 @@ input {
         width: 100%;
         @include tablette {
             font-size: 1.5em;
+        }
+        @include large-desktop{
+            font-size: 1.3em;
         }
     }
 }
@@ -403,7 +423,6 @@ input {
     text-align: center;
     margin: 0%;
     padding: 0%;
-    font-size: normal;
     margin-left: -50%;
     
 }
@@ -412,6 +431,9 @@ input {
     margin-right: 5%;
     color: $gris_secondaire;
     @include tablette {
+        font-size: larger;
+    }
+    @include large-desktop {
         font-size: larger;
     }
     
@@ -423,12 +445,18 @@ input {
     @include tablette {
         font-size: larger;
     }
+    @include large-desktop {
+        font-size: larger;
+    }
 }
 
 .store__icon {
     margin-right: 5%;
     color: $gris_secondaire;
     @include tablette {
+        font-size: larger;
+    }
+    @include large-desktop {
         font-size: larger;
     }
 }
@@ -450,6 +478,10 @@ input {
         background-color: white;
         padding-top: 0%;
     }
+    @include large-desktop {
+        background-color: white;
+        margin-bottom: 5%;
+    }
     &__principal {
         margin-left: 5%;
         @include tablette {
@@ -462,6 +494,12 @@ input {
             margin-bottom: 0%;
             font-size: 2.5em;
         }
+        @include large-desktop {
+            text-align: center;
+            margin-left: 0%;
+            margin-bottom: 0%;
+            font-size: 2em;
+        }
     }
     &__liste {
         display: flex;
@@ -470,6 +508,12 @@ input {
         width: 100%;
         height: 100%;
         @include desktop{
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-around;
+        }
+        @include large-desktop {
             flex-direction: row;
             flex-wrap: wrap;
             align-items: center;
@@ -498,6 +542,9 @@ input {
     @include desktop {
         left: 80%;
     }
+    @include large-desktop {
+        left: 85%;
+    }
 }
 
 .restaurant {
@@ -519,6 +566,13 @@ input {
         margin-left: 2%;
         height: 25%;
     }
+    @include large-desktop {
+        width: 45%;
+        margin-bottom: 0%;
+        margin-right: 2%;
+        margin-left: 2%;
+        height: 35%;
+    }
         &:hover {
             box-shadow: 0px 4px 4px 1px $gris_ombre;
         }
@@ -527,6 +581,9 @@ input {
             object-fit: cover;
             height: 70%;
             width: 100%;
+            @include large-desktop {
+                height: 79%;
+            }
         }
         &__titre {
             margin-bottom: 0%;
@@ -535,12 +592,19 @@ input {
             @include tablette {
                 font-size: 1.3em;
             }
+            @include large-desktop {
+                font-size: 1.3em;
+            }
         }
         &__texte {
             margin-left: 2%;
             margin-top: 1%;
             @include tablette{
                 font-size: 1.1em;
+            }
+            @include large-desktop {
+                font-size: 1.1em;
+                
             } 
         }
         &__link {
@@ -570,6 +634,10 @@ input {
         left: 90%;
         font-size: xx-large;
     }
+    @include large-desktop {
+        left: 90%;
+        font-size:xx-large;
+    }
 }
 .fa-heart:hover::after{
     font-family: FontAwesome;
@@ -588,6 +656,9 @@ input {
         font-size: xx-large;
     }
     @include desktop {
+        font-size: xx-large;
+    }
+    @include large-desktop {
         font-size: xx-large;
     }
 }
@@ -621,11 +692,20 @@ input {
         padding-top: 2%;
         padding-left: 2%;
     }
+    @include large-desktop {
+        height: auto;
+        padding-top: 2%;
+        padding-left: 2%;
+    }
     &__img {
         width: 30%;
         margin-bottom: 5%;
         filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(129deg) brightness(104%) contrast(107%);
         @include desktop {
+            width: 20%;
+            margin-bottom: 2%;
+        }
+        @include large-desktop {
             width: 20%;
             margin-bottom: 2%;
         }
@@ -639,10 +719,19 @@ input {
             align-items: center;
             justify-content: space-between;
         }
+        @include large-desktop {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
     }
     &__ensemble {
         margin-bottom:2%;
         @include desktop {
+            margin-right: 2%;
+            width: 100%;
+        }
+        @include large-desktop {
             margin-right: 2%;
             width: 100%;
         }
