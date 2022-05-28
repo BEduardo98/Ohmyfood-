@@ -404,6 +404,7 @@ input {
   .exploration__paragraph {
     margin-bottom: 3%;
     width: 100%;
+    font-size: 1.3em;
   }
 }
 
@@ -438,6 +439,7 @@ input {
 @media screen and (min-width: 1280px) {
   .exploration__button {
     margin-bottom: 5%;
+    font-size: 1.5em;
   }
 }
 
@@ -494,6 +496,27 @@ input {
   }
 }
 
+@media screen and (min-width: 1280px) {
+  .fonctionnement {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 0%;
+  }
+}
+
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .fonctionnement_grand_titre {
     font-size: 2.5em;
@@ -503,6 +526,12 @@ input {
 @media screen and (min-width: 1024px) and (max-width: 1279px) {
   .fonctionnement_grand_titre {
     font-size: 2.5em;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .fonctionnement_grand_titre {
+    font-size: 2em;
   }
 }
 
@@ -537,6 +566,12 @@ input {
   }
 }
 
+@media screen and (min-width: 1280px) {
+  .fonctionnement__choix {
+    width: 50%;
+  }
+}
+
 .fonctionnement__choix:hover {
   background-color: #f2eafb;
   -webkit-box-shadow: 0px 4px 4px 1px #c7c7c7;
@@ -555,6 +590,12 @@ input {
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .fonctionnement__titre {
     font-size: 1.5em;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .fonctionnement__titre {
+    font-size: 1.3em;
   }
 }
 
@@ -583,7 +624,6 @@ input {
   text-align: center;
   margin: 0%;
   padding: 0%;
-  font-size: normal;
   margin-left: -50%;
 }
 
@@ -593,6 +633,12 @@ input {
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
+  .mobile__screen {
+    font-size: larger;
+  }
+}
+
+@media screen and (min-width: 1280px) {
   .mobile__screen {
     font-size: larger;
   }
@@ -609,12 +655,24 @@ input {
   }
 }
 
+@media screen and (min-width: 1280px) {
+  .liste__ul {
+    font-size: larger;
+  }
+}
+
 .store__icon {
   margin-right: 5%;
   color: #848484;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
+  .store__icon {
+    font-size: larger;
+  }
+}
+
+@media screen and (min-width: 1280px) {
   .store__icon {
     font-size: larger;
   }
@@ -643,6 +701,13 @@ input {
   }
 }
 
+@media screen and (min-width: 1280px) {
+  .restaurants {
+    background-color: white;
+    margin-bottom: 5%;
+  }
+}
+
 .restaurants__principal {
   margin-left: 5%;
 }
@@ -663,6 +728,15 @@ input {
   }
 }
 
+@media screen and (min-width: 1280px) {
+  .restaurants__principal {
+    text-align: center;
+    margin-left: 0%;
+    margin-bottom: 0%;
+    font-size: 2em;
+  }
+}
+
 .restaurants__liste {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -679,6 +753,22 @@ input {
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1279px) {
+  .restaurants__liste {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+}
+
+@media screen and (min-width: 1280px) {
   .restaurants__liste {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -721,6 +811,12 @@ input {
   }
 }
 
+@media screen and (min-width: 1280px) {
+  .texte__nouveau {
+    left: 85%;
+  }
+}
+
 .restaurant {
   position: relative;
   border: 1px solid white;
@@ -749,6 +845,16 @@ input {
   }
 }
 
+@media screen and (min-width: 1280px) {
+  .restaurant {
+    width: 45%;
+    margin-bottom: 0%;
+    margin-right: 2%;
+    margin-left: 2%;
+    height: 35%;
+  }
+}
+
 .restaurant:hover {
   -webkit-box-shadow: 0px 4px 4px 1px #c7c7c7;
           box-shadow: 0px 4px 4px 1px #c7c7c7;
@@ -760,6 +866,12 @@ input {
      object-fit: cover;
   height: 70%;
   width: 100%;
+}
+
+@media screen and (min-width: 1280px) {
+  .restaurant__image {
+    height: 79%;
+  }
 }
 
 .restaurant__titre {
@@ -774,12 +886,24 @@ input {
   }
 }
 
+@media screen and (min-width: 1280px) {
+  .restaurant__titre {
+    font-size: 1.3em;
+  }
+}
+
 .restaurant__texte {
   margin-left: 2%;
   margin-top: 1%;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
+  .restaurant__texte {
+    font-size: 1.1em;
+  }
+}
+
+@media screen and (min-width: 1280px) {
   .restaurant__texte {
     font-size: 1.1em;
   }
@@ -819,6 +943,13 @@ input {
   }
 }
 
+@media screen and (min-width: 1280px) {
+  .fa-heart {
+    left: 90%;
+    font-size: xx-large;
+  }
+}
+
 .fa-heart:hover::after {
   font-family: FontAwesome;
   content: "\f004";
@@ -843,6 +974,12 @@ input {
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1279px) {
+  .fa-heart:hover::after {
+    font-size: xx-large;
+  }
+}
+
+@media screen and (min-width: 1280px) {
   .fa-heart:hover::after {
     font-size: xx-large;
   }
@@ -895,6 +1032,14 @@ input {
   }
 }
 
+@media screen and (min-width: 1280px) {
+  .footer {
+    height: auto;
+    padding-top: 2%;
+    padding-left: 2%;
+  }
+}
+
 .footer__img {
   width: 30%;
   margin-bottom: 5%;
@@ -903,6 +1048,13 @@ input {
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1279px) {
+  .footer__img {
+    width: 20%;
+    margin-bottom: 2%;
+  }
+}
+
+@media screen and (min-width: 1280px) {
   .footer__img {
     width: 20%;
     margin-bottom: 2%;
@@ -934,11 +1086,33 @@ input {
   }
 }
 
+@media screen and (min-width: 1280px) {
+  .footer__pages {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
 .footer__ensemble {
   margin-bottom: 2%;
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1279px) {
+  .footer__ensemble {
+    margin-right: 2%;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1280px) {
   .footer__ensemble {
     margin-right: 2%;
     width: 100%;
