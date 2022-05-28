@@ -55,7 +55,7 @@ $gris_ombre:#c7c7c7;
     }
     @include large-desktop{
         justify-content: space-between;
-        width: 70%;
+        width: 65%;
     }
     &__logo {
         text-align: center;
@@ -80,6 +80,7 @@ $gris_ombre:#c7c7c7;
         }
         @include large-desktop{
             width: 60%;
+            align-items: center;
         }
     }
 }
@@ -380,7 +381,7 @@ $gris_ombre:#c7c7c7;
         transform: scaleX(0);
     }
     100% {
-        transform: scaleX(-50px);
+        transform: scaleX(50px);
     }
     
 }
@@ -432,7 +433,7 @@ $gris_ombre:#c7c7c7;
         visibility: hidden;
     }
     100%{
-        transform: translateZ(1);
+        transform: translateZ(1px);
         visibility: visible;
     }
 }
