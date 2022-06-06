@@ -283,8 +283,9 @@ $gris_ombre:#c7c7c7;
         width: 95%;
         margin-bottom: 4%;
         padding-top: 2%;
-        animation: apparition 1s ease-in-out forwards;
+        animation: apparition 1.5s ease-in-out forwards;
         visibility: hidden;
+        overflow: hidden;
         @include desktop {
             width: 60%;
             padding-top: 1%;
@@ -315,16 +316,187 @@ $gris_ombre:#c7c7c7;
             display: flex;
             justify-content: center;
             align-items: center;
-            animation: glissement 0.5s ease-in-out forwards;
-            transform-origin: right;
+            left: 86%;
+            transition: 500ms linear all;
+            @include tablette {
+                left: 90%;
+            }
+            @include desktop {
+                left: 90%;
+            }
+            @include large-desktop{
+                left: 90%;
+            }
         }
+        &:hover .fa-circle-check {
+            animation: rotate 0.8s ease-in-out;
+        }
+        
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+            
+        }
+        
         &:hover .menu__prix {
-            padding-right: 50px;
-            transition: 0.5s ease-in-out;
+            padding-right: 55px;
+            transition: 0.5s ease-in-out all;
             white-space: nowrap;
         }
     }
-
+    &__choix2 {
+        position: relative;
+        border: 1px solid white;
+        border-radius: 15px 15px;
+        box-shadow: 0px 5px 9px -1px $gris_ombre;
+        background-color: white;
+        width: 95%;
+        margin-bottom: 4%;
+        padding-top: 2%;
+        animation: apparition 1.5s ease-in-out forwards;
+        visibility: hidden;
+        overflow: hidden;
+        @include desktop {
+            width: 60%;
+            padding-top: 1%;
+        }
+        @include large-desktop{
+            width: 60%;
+            padding-top: 1%;
+        }
+        &:hover {
+            box-shadow: 0px 4px 4px 1px $gris_ombre;
+        }
+        &:nth-child(1){
+            animation-delay: 1.5s;
+        }
+        &:nth-child(2){
+            animation-delay: 1.6s;
+        }
+        &:nth-child(3){
+            animation-delay: 1.7s;
+        }
+        &:nth-child(4){
+            animation-delay: 1.8s;
+        }
+        &:nth-child(5){
+            animation-delay: 1.9s;
+        }
+        &:hover .validation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            left: 86%;
+            transition: 500ms linear all;
+            @include tablette {
+                left: 90%;
+            }
+            @include desktop {
+                left: 90%;
+            }
+            @include large-desktop{
+                left: 90%;
+            }
+        }
+        &:hover .fa-circle-check {
+            animation: rotate 0.8s ease-in-out;
+        }
+        
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+            
+        }
+        
+        &:hover .menu__prix {
+            padding-right: 55px;
+            transition: 0.5s ease-in-out all;
+            white-space: nowrap;
+        }
+    }
+    &__choix3 {
+        position: relative;
+        border: 1px solid white;
+        border-radius: 15px 15px;
+        box-shadow: 0px 5px 9px -1px $gris_ombre;
+        background-color: white;
+        width: 95%;
+        margin-bottom: 4%;
+        padding-top: 2%;
+        animation: apparition 1.5s ease-in-out forwards;
+        visibility: hidden;
+        overflow: hidden;
+        @include desktop {
+            width: 60%;
+            padding-top: 1%;
+        }
+        @include large-desktop{
+            width: 60%;
+            padding-top: 1%;
+        }
+        &:hover {
+            box-shadow: 0px 4px 4px 1px $gris_ombre;
+        }
+        &:nth-child(1){
+            animation-delay: 2s;
+        }
+        &:nth-child(2){
+            animation-delay: 2.1s;
+        }
+        &:nth-child(3){
+            animation-delay: 2.2s;
+        }
+        &:nth-child(4){
+            animation-delay: 2.3s;
+        }
+        &:nth-child(5){
+            animation-delay: 2.4s;
+        }
+        &:hover .validation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            left: 86%;
+            transition: 500ms linear all;
+            @include tablette {
+                left: 90%;
+            }
+            @include desktop {
+                left: 90%;
+            }
+            @include large-desktop{
+                left: 90%;
+            }
+        }
+        &:hover .fa-circle-check {
+            animation: rotate 0.8s ease-in-out;
+        }
+        
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+            
+        }
+        
+        &:hover .menu__prix {
+            padding-right: 55px;
+            transition: 0.5s ease-in-out all;
+            white-space: nowrap;
+        }
+    }
+    
     &__position {
         display: flex;
         justify-content: space-between;
@@ -366,6 +538,7 @@ $gris_ombre:#c7c7c7;
     &__prix {
         font-weight: bold;
         text-align: right;
+        transition: 0.5s ease-in-out all;
         @include tablette {
             font-size: 1.1em;
         }
@@ -375,37 +548,30 @@ $gris_ombre:#c7c7c7;
     }
 }
 
-
-@keyframes glissement {
-    0% {
-        transform: scaleX(0);
-    }
-    100% {
-        transform: scaleX(50px);
-    }
-    
-}
-
 .validation {
-    display: none;
     position: absolute;
     border: 1px solid $couleur_tertiaire;
     background: $couleur_tertiaire;
     border-radius: 0 15px 15px 0;
-    left: 83%;
+    left: 100%;
     bottom: -1px;
-    padding:0px 20px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 15px;
+    padding-right: 15px;
     height: 100%;
+    transition: all 0.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
     @include tablette {
-        left: 90%;
-        padding: 0px 25px;
+        padding: 0px 28px;
     }
     @include desktop {
-        left: 90%;
         padding: 0px 20px; 
     }
     @include large-desktop{
-        left: 92%;
         padding:0px 35px;
     }
 }
@@ -413,27 +579,15 @@ $gris_ombre:#c7c7c7;
 .fa-circle-check {
     font-size: 20px;
     color: white;
-    transform: rotate(180deg);
-    animation: rotate 0.5s both;
-}
-
-@keyframes rotate {
-    0% {
-        transform: rotate(0deg);
-    }
-    100%{
-        transform: rotate(360deg);
-    }
-    
 }
 
 @keyframes apparition{
     0% {
-        transform: translateZ(0);
+        transform: scale(0);
         visibility: hidden;
     }
     100%{
-        transform: translateZ(1px);
+        transform: scale(1);
         visibility: visible;
     }
 }
@@ -470,6 +624,7 @@ $gris_ombre:#c7c7c7;
             margin-bottom: 5%;
         }
         &:hover {
+            background: linear-gradient(lighten($couleur_secondaire, 5%), lighten($couleur_primaire,5%));
             box-shadow: 0px 5px 5px 1px rgb(172, 172, 172);
         }
     }
